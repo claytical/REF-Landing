@@ -53,37 +53,37 @@ export default function Home() {
 
   const AuthedState = () => {
     return (
-      <div class="control p-5">
-        <button class="button is-dark" onClick={initAccount}>Pray for Privilege</button>
+      <div className="control p-5">
+        <button className="button is-dark" onClick={initAccount}>Pray for Privilege</button>
       </div>
     )
   }
 
   const UnauthenticatedState = () => {
     return (
-      <div class="control p-5">
-        <button onClick={fcl.logIn} class="button is-dark">Log In</button>
+      <div className="control p-5">
+        <button onClick={fcl.logIn} className="button is-dark">Connect Wallet</button>
       </div>
     )
   }
 
   return (
-    <div class="refs">
+    <div className="refs">
       <Head>
         <title>Rich Entitled Fucks</title>
         <meta name="description" content="Web3 for the truly deserving" />
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <div class="container main">
+      <div className="container main">
   
-        <section class="section">
+        <section className="section">
 
-          <div class="columns">
-              <div class="column">
+          <div className="columns">
+              <div className="column">
                 <img src="ref_logo.png" width="25%"/>
               </div>
-              <div class="column is-one-quarter">
+              <div className="column is-one-quarter">
                 {user.loggedIn
                   ? <AuthedState />
                   : <UnauthenticatedState />
@@ -91,47 +91,47 @@ export default function Home() {
               </div>
           </div>
         </section>
-        <section class="section">
-          <div class="columns">
-            <div class="column">
-              <h1 class="title">Welcome to Rich Entitled Fucks</h1> 
-              <p class="is-family-secondary pb-5">REFs is a collection of 100 Rich Entitled Fuck NFTs, 
+        <section className="section">
+          <div className="columns">
+            <div className="column">
+              <h1 className="title">Welcome to Rich Entitled Fucks</h1> 
+              <p className="is-family-secondary pb-5">REFs is a collection of 100 Rich Entitled Fuck NFTs, 
               unique digital collectibles living on the Flow blockchain.
               Your Rich Entitled Fuck NFT doubles as your Rich Entitled 
               Fuck membership card, and grants you access to members-only 
               benefits.</p>
 
-              <h2 class="title">Exclusive Distribution</h2>
-              <p class="is-family-secondary pb-5">Every Rich Entitled Fuck is cheap, but is reserved exclusively for people who already own
+              <h2 className="title">Exclusive Distribution</h2>
+              <p className="is-family-secondary pb-5">Every Rich Entitled Fuck is cheap, but is reserved exclusively for people who already own
               or have been gifted a Rich Entitled Fuck. Membership costs the same for everyone, but you do
               have to deserve it.</p> 
 
-              <h2 class="title">The Specs</h2>
-              <p class="is-family-secondary pb-5">Each Rich Entitled Fuck is unique and programatically generated to accurately represent
+              <h2 className="title">The Specs</h2>
+              <p className="is-family-secondary pb-5">Each Rich Entitled Fuck is unique and programatically generated to accurately represent
               homogenously diverse traits found in the breeding pool of the elite in gender as well as 
               skin, eye and hair color. Each Rich Entitled Fuck also comes with fun and possibly rare
               facial accessories to signal your unique identity All Rich Entitled Fucks are rich and entitled,
               but some are rarer than others.</p>
 
-              <p class="is-family-secondary pb-5">
+              <p className="is-family-secondary pb-5">
               The fucks are stored on the Flow blockchain and hosted on IPFS. Purchasing a REF costs 1 FLOW. 
               Accessing the members-only area requires Rich Entitled Fucks to be signed into their digital wallet.</p> 
-              <h2 class="title">Welcome to the Club</h2>
-              <p class="is-family-secondary pb-5">When you buy a Rich Entitled Fuck, you are not simply buying an avatar or a provably rare piece of art.
+              <h2 className="title">Welcome to the Club</h2>
+              <p className="is-family-secondary pb-5">When you buy a Rich Entitled Fuck, you are not simply buying an avatar or a provably rare piece of art.
               You are gaining membership access to a club whose benefits and offerings are immense but will not change much
               over time. Your Rich Entitled Fuck might be able to serve as your digital identity, and possibly open digital doors for you.
               We would rather not give specifics.
             </p>
             </div>
 
-            <div class="column is-one-quarter">
-              <img src="ref_32.png" class="image p-5"/>
-              <img src="ref_52.png" class="image p-5"/>
+            <div className="column is-one-quarter">
+              <img src="ref_32.png" className="image p-5"/>
+              <img src="ref_52.png" className="image p-5"/>
             </div>
           </div>
         </section>
       </div>
-      <div class="footer has-text-centered">
+      <div className="footer has-text-centered">
         Copy, right?
       </div>
   </div>
