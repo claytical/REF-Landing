@@ -28,7 +28,7 @@ export default function Home() {
 
           let refReceiver = account.getCapability<&{NonFungibleToken.Receiver}>(/public/RichEntitledFuckCollection)
           
-            if(!refReceiver.check()) {
+            if(refReceiver == nil){
 
               // Create a public Receiver capability to the REF Collection
               account.link<&RichEntitledFuck.Collection{NonFungibleToken.CollectionPublic, RichEntitledFuck.RichEntitledFuckCollectionPublic}>
