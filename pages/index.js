@@ -25,14 +25,19 @@ export default function Home() {
         transaction {
           prepare(account: AuthAccount) {
 
-          // Create a public Receiver capability to the REF Collection
-          account.link<&RichEntitledFuck.Collection{NonFungibleToken.CollectionPublic, RichEntitledFuck.RichEntitledFuckCollectionPublic}>
-                 (/public/RichEntitledFuckCollection, target: /storage/RichEntitledFuckCollection)
 
-          account.save<@NonFungibleToken.Collection>(<-RichEntitledFuck.createEmptyCollection(), to: RichEntitledFuck.CollectionStoragePath)
+          let refReceiver = account.getCapability<&{NonFungibleToken.Receiver}>(/public/RichEntitledFuckCollection)
+          
+            if(!refReceiver.check()) {
 
-          account.link<&{NonFungibleToken.Receiver}>(RichEntitledFuck.CollectionPublicPath, target: RichEntitledFuck.CollectionStoragePath)
+              // Create a public Receiver capability to the REF Collection
+              account.link<&RichEntitledFuck.Collection{NonFungibleToken.CollectionPublic, RichEntitledFuck.RichEntitledFuckCollectionPublic}>
+                   (/public/RichEntitledFuckCollection, target: /storage/RichEntitledFuckCollection)
 
+              account.save<@NonFungibleToken.Collection>(<-RichEntitledFuck.createEmptyCollection(), to: RichEntitledFuck.CollectionStoragePath)
+
+              account.link<&{NonFungibleToken.Receiver}>(RichEntitledFuck.CollectionPublicPath, target: RichEntitledFuck.CollectionStoragePath)
+            }
           }
         }
       `,
