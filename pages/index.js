@@ -26,18 +26,16 @@ export default function Home() {
           prepare(account: AuthAccount) {
             // Only initialize the account if it hasn't already been initialized
 
-            let capability = account.getCapability<&{RichEntitledFuck.RichEntitledFuckCollectionPublic}>(RichEntitledFuck.CollectionPublicPath)
+              let entitledCapability = account.getCapability<&{NonFungibleToken.Receiver}>(/public/RichEntitledFuckCollection)
 
-//            if(capability == nil) {
-              // Create a new empty collection
-              let collection <- RichEntitledFuck.createEmptyCollection()
-        
-              // store the empty REF Collection in account storage
-              account.save<@NonFungibleToken.Collection>(<-collection, to: RichEntitledFuck.CollectionStoragePath)
-
-              // create a public capability for the Collection
+            if(!entitledCapability.check()) {
+              let refs <- RichEntitledFuck.createEmptyCollection()
+              account.save<@NonFungibleToken.Collection>(<-refs, to: RichEntitledFuck.CollectionStoragePath)
               account.link<&{NonFungibleToken.Receiver}>(RichEntitledFuck.CollectionPublicPath, target: RichEntitledFuck.CollectionStoragePath)
-//            }
+            }
+            else {
+            //already exists
+            }
           }
         }
       `,
