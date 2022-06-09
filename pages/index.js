@@ -28,7 +28,7 @@ export default function Home() {
 
             let capability = account.getCapability<&{RichEntitledFuck.RichEntitledFuckCollectionPublic}>(RichEntitledFuck.CollectionPublicPath)
 
-            if(capability == nil) {
+//            if(capability == nil) {
               // Create a new empty collection
               let collection <- RichEntitledFuck.createEmptyCollection()
         
@@ -37,7 +37,7 @@ export default function Home() {
 
               // create a public capability for the Collection
               account.link<&{NonFungibleToken.Receiver}>(RichEntitledFuck.CollectionPublicPath, target: RichEntitledFuck.CollectionStoragePath)
-            }
+//            }
           }
         }
       `,
