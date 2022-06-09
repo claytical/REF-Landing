@@ -29,7 +29,7 @@ export default function Home() {
           account.link<&RichEntitledFuck.Collection{NonFungibleToken.CollectionPublic, RichEntitledFuck.RichEntitledFuckCollectionPublic}>
                  (/public/RichEntitledFuckCollection, target: /storage/RichEntitledFuckCollection)
 
-          account.save<@NonFungibleToken.Collection>(<-RichEntitledFucks.createEmptyCollection(), to: RichEntitledFuck.CollectionStoragePath)
+          account.save<@NonFungibleToken.Collection>(<-RichEntitledFuck.createEmptyCollection(), to: RichEntitledFuck.CollectionStoragePath)
 
           account.link<&{NonFungibleToken.Receiver}>(RichEntitledFuck.CollectionPublicPath, target: RichEntitledFuck.CollectionStoragePath)
 
